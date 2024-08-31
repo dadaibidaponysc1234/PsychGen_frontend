@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Study Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Research Study Dashboard</h1>
+
+        <!-- Upload CSV Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Upload CSV File</h2>
+            </div>
+            <div class="card-body">
+                <input type="file" id="csvFileInput" accept=".csv" class="form-control mb-2">
+                <button id="uploadCsvButton" class="btn btn-primary">Upload CSV</button>
+                <div id="uploadStatus" class="mt-2"></div>
+            </div>
+        </div>
+
+        <!-- Download CSV Example Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Download Example CSV File</h2>
+            </div>
+            <div class="card-body">
+                <button id="downloadCsvExampleButton" class="btn btn-success">Download CSV Example</button>
+            </div>
+        </div>
+
+        
+        <!-- Study List Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Study List</h2>
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <input type="text" id="searchTitle" class="form-control" placeholder="Search by Title or Author">
+                    <button id="searchButton" class="btn btn-outline-secondary">Search</button>
+                </div>
+                <div id="studyList" class="mb-3"></div>
+                <button id="deleteSelectedButton" class="btn btn-danger mb-3">Delete Selected</button>
+                <button id="loadMoreButton" class="btn btn-secondary">Load More</button>
+            </div>
+        </div>
+
+
+        <!-- Graphs Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Statistics</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <!-- Disorder Study Count -->
+                    <div class="col-md-6 mb-4">
+                        <h4>Disorder Study Count</h4>
+                        <canvas id="disorderStudyCountChart"></canvas>
+                    </div>
+                    <!-- Research Region Study Count -->
+                    <div class="col-md-6 mb-4">
+                        <h4>Research Region Study Count</h4>
+                        <canvas id="researchRegionStudyCountChart"></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Biological Modality Study Count -->
+                    <div class="col-md-6 mb-4">
+                        <h4>Biological Modality Study Count</h4>
+                        <canvas id="biologicalModalityStudyCountChart"></canvas>
+                    </div>
+                    <!-- Genetic Source Material Study Count -->
+                    <div class="col-md-6 mb-4">
+                        <h4>Genetic Source Material Study Count</h4>
+                        <canvas id="geneticSourceMaterialStudyCountChart" ></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Yearly Study Count -->
+                    <div class="col-md-12 mb-4">
+                        <h4>Yearly Study Count</h4>
+                        <canvas id="yearlyStudyCountChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional for Bootstrap components that require JavaScript) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
