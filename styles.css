@@ -2,6 +2,7 @@
 
 body {
     background-color: #f8f9fa;
+    font-family: Arial, sans-serif;    
 }
 
 h1, h2, h4 {
@@ -40,4 +41,17 @@ canvas {
     width: 100px;
     height: 200px;
     margin: 0 auto;
+}
+
+svg {
+    background-color: #f9f9f9;
+    margin: 0 auto;
+}
+
+.legend {
+    font-size: 8px;
+}
+
+.legend rect {
+    stroke-width: 2;
 }

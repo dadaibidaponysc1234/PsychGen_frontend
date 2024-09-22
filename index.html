@@ -8,10 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <div class="container my-5">
+        <input type="text" id="search" oninput="fetchSuggestions(this.value)">
+    </div>
     <div class="container my-5">
         <h1 class="text-center mb-4">Research Study Dashboard</h1>
 
@@ -87,9 +91,33 @@
                 </div>
                 <div class="row">
                     <!-- Yearly Study Count -->
-                    <div class="col-md-12 mb-4">
-                        <h4>Yearly Study Count</h4>
+                    <div class="col-md-6 mb-4">
+                        <h4>Yearly Study Count and impact_factor</h4>
                         <canvas id="yearlyStudyCountChart"></canvas>
+                    </div>
+                    <!-- citationStudyCountChart -->
+                    <div class="col-md-6 mb-4">
+                        <h4>Citations </h4>
+                        <canvas id="citationStudyCountChart" ></canvas>
+                    </div>
+                </div>
+
+                <div class="row"></div>
+                    <!-- Yearly Study Count -->
+                    <div class="col-md-6 mb-4">
+                        <h4>Yearly Study Count and impact_factor</h4>
+                        <canvas id="yearlyStudyCountChart"></canvas>
+                    </div>
+                    <!-- citationStudyCountChart -->
+                    <div class="col-md-6 mb-4">
+                        <h4>Citations </h4>
+                        <!-- <canvas id="citationStudyCountChart" ></canvas> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <h1>Chord Diagram: Africa vs. Other Regions</h1>
+                        <div id="chart"></div>
                     </div>
                 </div>
             </div>
@@ -100,5 +128,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
+    
+
+    <!-- <script src="colabscript.js"></script> -->
 </body>
 </html>
