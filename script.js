@@ -275,10 +275,25 @@ const regions = {
 // Define African regions for easier identification
 const africanRegions = ["NORTHERN AFRICA", "EASTERN AFRICA", "MIDDLE AFRICA", "WESTERN AFRICA", "SOUTHERN AFRICA"];
 
+const customColors = [
+    "#17becf" , // cyan
+    "#8c564b", // brown
+    "#e377c2", // pink
+    "#7f7f7f", // grey
+    "#bcbd22", // yellow
+    "#9467bd", // purple
+    "#ff7f0e", // orange
+    "#1f77b4", // blue
+    "#d62728", // red
+    "#2ca02c", // green
+];
+
+
 // Create a color scale for regions
 const regionColors = d3.scaleOrdinal()
     .domain(Object.keys(regions))
-    .range(d3.schemeCategory10);
+    // .range(d3.schemeCategory10);
+    .range(customColors);
 
 // Create a reverse lookup for country -> region
 const countryToRegion = {};
@@ -401,7 +416,7 @@ fetch('https://algorithmxcomp.pythonanywhere.com/api/country-collaboration/')
             .style("fill", d => regionColors(countryToRegion[countries[d.target.index]]))
             .style("stroke", d => d3.rgb(regionColors(countryToRegion[countries[d.target.index]])).darker())
             .style("stroke-width", 0.1)
-            .style("opacity", 0.4);
+            .style("opacity", 0.6);
 
         // Add legend
         const legend = svg.append("g")
